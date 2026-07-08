@@ -7,7 +7,7 @@ import Cocktails from "./components/Cocktails.jsx";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 const App = () => {
     return (
-        <main>
+        <main id="home">
             <Navbar/>
             <Hero/>
             <Cocktails/>
