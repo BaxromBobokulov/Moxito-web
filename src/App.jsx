@@ -1,26 +1,35 @@
+import { lazy, Suspense } from 'react';
 import gsap from 'gsap';
-import { ScrollTrigger, SplitText } from "gsap/all";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { SplitText } from 'gsap/SplitText';
+
+// Above-the-fold — eager load
 import Navbar from "./components/Navbar.jsx";
 import Hero from "./components/Hero.jsx";
-import Cocktails from "./components/Cocktails.jsx";
-import About from './components/About.jsx';
-import Art from './components/Art.jsx';
-import Menu from './components/Menu.jsx';
-import Contact from './components/Contact.jsx';
+
+// Below-the-fold — lazy load (loaded only when needed)
+const Cocktails = lazy(() => import('./components/Cocktails.jsx'));
+const About     = lazy(() => import('./components/About.jsx'));
+const Art       = lazy(() => import('./components/Art.jsx'));
+const Menu      = lazy(() => import('./components/Menu.jsx'));
+const Contact   = lazy(() => import('./components/Contact.jsx'));
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
+
 const App = () => {
     return (
         <main id="home">
             <Navbar />
             <Hero />
-            <Cocktails />
-            <About />
-            <Art />
-            <Menu />
-            <Contact />
+            <Suspense fallback={null}>
+                <Cocktails />
+                <About />
+                <Art />
+                <Menu />
+                <Contact />
+            </Suspense>
         </main>
     );
 };
 
-export default App;
+export default App;

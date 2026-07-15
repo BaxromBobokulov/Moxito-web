@@ -1,6 +1,6 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { SplitText } from "gsap/all";
+import { SplitText } from "gsap/SplitText";
 
 function About(props) {
 
@@ -47,27 +47,27 @@ function About(props) {
             </div>
             <div className='top-grid'>
                 <div className='md:col-span-3'>
-                    <img src="/images/abt1.png" alt="grid-img-1" />
+                    <img src="/images/abt1.png" alt="grid-img-1" loading="lazy" decoding="async" />
                     <div className='noisy' />
                 </div>
 
                 <div className='md:col-span-6'>
-                    <img src="/images/abt2.png" alt="grid-img-1" />
+                    <img src="/images/abt2.png" alt="grid-img-2" loading="lazy" decoding="async" />
                     <div className='noisy' />
                 </div>
 
                 <div className='md:col-span-3'>
-                    <img src="/images/abt5.png" alt="grid-img-5" />
+                    <img src="/images/abt5.png" alt="grid-img-5" loading="lazy" decoding="async" />
                     <div className='noisy' />
                 </div>
             </div>
             <div className='bottom-grid'>
                 <div className='md:col-span-8'>
-                    <img src="/images/abt3.png" alt="grid-img-3" />
+                    <img src="/images/abt3.png" alt="grid-img-3" loading="lazy" decoding="async" />
                     <div className='noisy' />
                 </div>
                 <div className='md:col-span-4'>
-                    <img src="/images/abt4.png" alt="grid-img-4" />
+                    <img src="/images/abt4.png" alt="grid-img-4" loading="lazy" decoding="async" />
                     <div className='noisy' />
                 </div>
             </div>

@@ -4,7 +4,6 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
 
 const Art = () => {
 
@@ -47,6 +46,8 @@ const Art = () => {
                     <div className="cocktail-img">
                         <img src="/images/under-img.jpg"
                             alt="cocktail"
+                            loading="lazy"
+                            decoding="async"
                             className="abs-center masked-img size-full object-contain" />
                     </div>
 

@@ -38,8 +38,8 @@ const nextCocktail = getCocktailAt(1)
 
 return (
     <section id='menu' aria-labelledby='menu-heading'>
-        <img src="/images/slider-left-leaf.png" alt="left-leaf" id='m-left-leaf' />
-        <img src="/images/slider-right-leaf.png" alt="right-leaf" id='m-right-leaf' />
+        <img src="/images/slider-left-leaf.png" alt="left-leaf" id='m-left-leaf' loading="lazy" decoding="async" />
+        <img src="/images/slider-right-leaf.png" alt="right-leaf" id='m-right-leaf' loading="lazy" decoding="async" />
 
         <h2 id='menu-heading' className='sr-only'>
             Cocktail Menu
@@ -66,14 +66,14 @@ return (
                     <span>{prevCocktail.name}</span>
                     <img src="/images/right-arrow.png" alt="right-arrow" aria-hidden="true" />
                 </button>
-                <button className='text-left' onClick={() => gotoSlide(currentIndex - 1)}>
+                <button className='text-left' onClick={() => gotoSlide(currentIndex + 1)}>
                     <span>{nextCocktail.name}</span>
                     <img src="/images/left-arrow.png" alt="left-arrow" aria-hidden="true" />
                 </button>
             </div>
 
             <div className='cocktail'>
-                <img src={currenCocktail.image} className='object-contain' />
+                <img src={currenCocktail.image} className='object-contain' loading="lazy" decoding="async" />
             </div>
 
             <div className='recipe'>

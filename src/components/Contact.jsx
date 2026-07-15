@@ -1,7 +1,7 @@
 import React from 'react'
 import { openingHours, socials } from '../../constants'
 import { useGSAP } from '@gsap/react'
-import { SplitText } from 'gsap/all'
+import { SplitText } from 'gsap/SplitText'
 import gsap from 'gsap'
 
 const Contact = () => {
@@ -33,8 +33,8 @@ const Contact = () => {
     })
     return (
         <footer id='contact'>
-            <img src="/images/footer-right-leaf.png" alt="leaf-right" id='f-right-leaf' />
-            <img src="/images/footer-left-leaf.png" alt="leaf-left" id='f-left-leaf' />
+            <img src="/images/footer-right-leaf.png" alt="leaf-right" id='f-right-leaf' loading="lazy" decoding="async" />
+            <img src="/images/footer-left-leaf.png" alt="leaf-left" id='f-left-leaf' loading="lazy" decoding="async" />
 
             <div className='content'>
                 <h2>Where to Find US</h2>
@@ -62,7 +62,7 @@ const Contact = () => {
                     <div className='flex-center gap-5'>
                         {socials.map((social) => (
                             <a key={social.name} href={social.url} target='_blank' rel="noopener noreferrer" aria-label={social.name}>
-                                <img src={social.icon} />
+                                <img src={social.icon} alt={social.name} loading="lazy" decoding="async" />
                             </a>
                         ))}
                     </div>
